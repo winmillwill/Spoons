@@ -24,7 +24,7 @@ obj.commandEnum = {
     ctrl = '⌃',
 }
 
-obj.show = false
+obj.shown = false
 
 function obj:init()
     self.sheetView = hs.webview.new({x=0, y=0, w=0, h=0})
@@ -202,7 +202,7 @@ function obj:show()
     local webcontent = generateHtml(capp)
     self.sheetView:html(webcontent)
     self.sheetView:show()
-    self.show = true
+    self.shown = true
 end
 
 --- KSheet:hide()
@@ -212,7 +212,7 @@ end
 
 function obj:hide()
     self.sheetView:hide()
-    self.show = false
+    self.shown = false
 end
 
 function obj:bindHotkeys(mapping)
@@ -225,7 +225,7 @@ function obj:bindHotkeys(mapping)
 end
 
 function obj:toggle()
-  if self.show then self:hide() else self:show()
+  if self.shown then self:hide() else self:show()
   end
 end
 
